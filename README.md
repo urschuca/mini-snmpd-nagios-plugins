@@ -7,23 +7,23 @@ Nagios/centreon plugins for [mini-snmpd](https://github.com/troglobit/mini-snmpd
 Plugin scope :
 
 - [x] disk
-- [] load
-- [] uptime
-- [] ram
-- [] cpu ?
+- [ ] load
+- [ ] uptime
+- [ ] ram
+- [ ] cpu ?
 
 ## Disk 
 
 Exemple :
 
-'''sh
+'''
 $ get_disk_value.py -H hostname -C community
 OK- / est à 51%.|/storage/log=3617952;;;0;7224824
 '''
 
 full documentation :
 
-'''sh
+'''
 python get_disk_value.py  -h
 usage: get_disk_value.py [-h] -H [HOSTNAME] [-C [COMMUNITY]] [-P [PORT]]
                          [-D [DISK]] [-w [WARNING]] [-c [CRITICAL]]
