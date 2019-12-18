@@ -10,7 +10,7 @@ WARNING = 1
 CRITICAL = 2
 
 # Valide argument
-parser = argparse.ArgumentParser(description='Get uptime on mini-snmpd server.')
+parser = argparse.ArgumentParser(description='Get load 1,5,15 on mini-snmpd server.')
 parser.add_argument('-H', '--hostname', type=str, nargs='?', required=True, help='Hostname')
 parser.add_argument('-C', '--community', type=str, nargs='?', help='SNMP Community', default='public')
 parser.add_argument('-P', '--port', type=str, nargs='?', help='SNMP Port', default='161')
