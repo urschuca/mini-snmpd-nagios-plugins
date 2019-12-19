@@ -8,8 +8,9 @@ Plugin scope :
 
 - [x] disk
 - [x] load
-- [ ] ram
+- [ ] ram (ongoing)
 - [ ] cpu ?
+- [ ] add snmp v1/v2 support
 
 ## Disk 
 
