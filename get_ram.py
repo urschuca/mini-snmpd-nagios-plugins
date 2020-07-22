@@ -50,26 +50,33 @@ elif errorStatus:
 else:
 
     Total= str(varBinds[0]).split('= ')[1]
-    Avail= str(varBinds[1]).split('= ')[1]
-    Shared= str(varBinds[2]).split('= ')[1]
+#    Avail= str(varBinds[1]).split('= ')[1]
+#    Shared= str(varBinds[2]).split('= ')[1]
     Buffer= str(varBinds[3]).split('= ')[1]
     Cached= str(varBinds[4]).split('= ')[1]
 
-    int_total=int(Total)
-    int_avail=int(Avail)
-    int_shared=int(Shared)
-    int_buffer=int(Buffer)
-    int_cached=int(Cached)
+    float_total=float(Total)
+    str_total=str(int(Total))
+#    int_avail=float(Avail)
+#    int_shared=int(Shared)
+    float_buffer=float(Buffer)
+    float_cached=float(Cached)
 
-#   perfdata= "- "+Name+" est à "+str(Percent)+"%.|"+Name+"="+Used+";;;0;"+Total+""
-#	
-#    if Percent >= args.critical:
-#        print("Critical"+perfdata)
-#        exit(CRITICAL)
-#    elif  Percent >= args.warning:
-#        print("Warning"+perfdata)
-#        exit(WARNING)
-#    else:
-#        print("OK"+perfdata)
-#        exit(OK)
 
+	
+    float_free = float_total - float_buffer - float_cached
+    str_free = str(int(float_free))
+    percent = float( (float_free / float_total) * 100)
+    str_percent = str(int(percent))
+
+    perfdata="- La RAM est utilisé à "+str_percent+" %.|RAM="+str_free+";;;0;"+str_total+""
+	
+    if percent >= args.critical:
+        print("Critical"+perfdata)
+        exit(CRITICAL)
+    elif  percent >= args.warning:
+        print("Warning"+perfdata)
+        exit(WARNING)
+    else:
+        print("OK"+perfdata)
+        exit(OK)
