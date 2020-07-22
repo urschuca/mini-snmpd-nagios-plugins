@@ -8,7 +8,7 @@ Plugin scope :
 
 - [x] disk
 - [x] load
-- [ ] ram (ongoing)
+- [x] ram
 - [ ] cpu ?
 - [ ] add snmp v1/v2 support
 
@@ -63,6 +63,37 @@ usage: get_load.py [-h] -H [HOSTNAME] [-C [COMMUNITY]] [-P [PORT]]
                    [-w [WARNING]] [-c [CRITICAL]]
 
 Get load 1,5,15 on mini-snmpd server.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -H [HOSTNAME], --hostname [HOSTNAME]
+                        Hostname
+  -C [COMMUNITY], --community [COMMUNITY]
+                        SNMP Community
+  -P [PORT], --port [PORT]
+                        SNMP Port
+  -w [WARNING], --warning [WARNING]
+                        Warning treshold
+  -c [CRITICAL], --critical [CRITICAL]
+                        Critical treshold
+```
+
+## RAM
+
+Exemple :
+
+```
+python get_ram.py -H hostname -C community
+OK- La RAM est utilisé à 46 %.|RAM=8593284;;;0;18522012
+```
+
+Documentation :
+
+```
+usage: get_ram.py [-h] -H [HOSTNAME] [-C [COMMUNITY]] [-P [PORT]]
+                  [-w [WARNING]] [-c [CRITICAL]]
+
+Monitor RAM on mini-snmpd server.
 
 optional arguments:
   -h, --help            show this help message and exit
